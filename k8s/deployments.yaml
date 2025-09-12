@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: python-k8s-demo
-        image: IMAGE_PLACEHOLDER
+        image: mgelvoleo/python-k8s-demo:v1
         ports:
         - containerPort: 5000
 
