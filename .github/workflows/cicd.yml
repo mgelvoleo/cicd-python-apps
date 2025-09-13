@@ -40,7 +40,7 @@ jobs:
 
   deploy:
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@v4
       - uses: azure/setup-kubectl@v3
@@ -48,7 +48,7 @@ jobs:
       - name: Set up kubeconfig
         run: |
           mkdir -p $HOME/.kube
-          echo "${{ secrets.KUBE_CONFIG_DATA }}" | base64 -d > $HOME/.kube/config
+          cp /home/mgelvoleo/.kube/config  $HOME/.kube/config
           chmod 600 $HOME/.kube/config
 
       - name: Apply Service
