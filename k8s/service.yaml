@@ -9,6 +9,7 @@ spec:
   selector:
     app: python-k8s-demo
   ports:
-    - port: 5000
+    - name: http   
+      port: 5000
       targetPort: 5000
       nodePort: 30090
