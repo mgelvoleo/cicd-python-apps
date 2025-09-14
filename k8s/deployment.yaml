@@ -14,7 +14,19 @@ spec:
     spec:
       containers:
       - name: python-k8s-demo
-        image: mgelvoleo/python-k8s-demo:v1
+        image: mgelvoleo/python-k8s-demo:latest  # ✅ use the right image
         ports:
         - containerPort: 5000
+        readinessProbe:                # ✅ health checks
+          httpGet:
+            path: /
+            port: 5000
+          initialDelaySeconds: 5
+          periodSeconds: 10
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 5000
+          initialDelaySeconds: 15
+          periodSeconds: 20
 
