@@ -5,7 +5,7 @@ metadata:
   labels:
     app: python-k8s-demo
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     app: python-k8s-demo
   ports:
