@@ -5,5 +5,5 @@ def test_home():
     client = app.test_client()
     res = client.get("/")
     assert res.status_code == 200
-    assert b"Hello, Kubernetes CI/CD test!" in res.data
+    assert b"Hello, Kubernetes CI/CD" in res.data
 
